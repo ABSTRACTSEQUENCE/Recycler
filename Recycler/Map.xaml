@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="Recycler.Map"
+			 xmlns:local="clr-namespace:Recycler"
+			 xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="64"></RowDefinition>
+                <RowDefinition Height="61"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.ColumnSpan="2" Grid.Row="0" Style="{StaticResource head}">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="recycle_logo.png"></Image>
+                    <Label Margin="50,0,0,0" Style="{StaticResource l_app_name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}"></Label>
+                </StackLayout>
+            </Frame>
+            <maps:Map Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="map">
+                <x:Arguments>
+                    <maps:MapSpan>
+                        <x:Arguments>
+                            <maps:Position>
+                                <x:Arguments>
+                                    <x:Double>58.010455</x:Double>
+                                    <x:Double>56.229443</x:Double>
+                                </x:Arguments>
+                            </maps:Position>
+                            <x:Double>0.1</x:Double>
+                            <x:Double>0.1</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
+            </maps:Map>
+            <Button x:Name="bt_organic" Clicked="bt_organic_Clicked" Text="Пищевые" Grid.Row="1" Grid.Column="0" Style="{StaticResource bt_map_top}"></Button>
+            <Button x:Name="bt_garden" Clicked="bt_garden_Clicked" Text="Садовые" Grid.Row="1" Grid.Column="1" Style="{StaticResource bt_map_top}"></Button>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
