@@ -17,6 +17,7 @@ namespace Recycler
 			InitializeComponent();
 			foreach(Button bt in bts) 
 			{
+				bt.Style = Application.Current.Resources["bt_selection"] as Style;
 				Content.Children.Add(bt);
 			}
 		}

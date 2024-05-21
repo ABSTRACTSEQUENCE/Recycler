@@ -7,19 +7,18 @@
         <StackLayout>
             <Frame Style="{StaticResource head}">
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="64"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="64"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-
-
-                    <Image Source="recycle_logo.png" Grid.Column="0"></Image>
-                    <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Style="{StaticResource Key=l_app_name}"></Label>
+                    
+                    <Label Style="{StaticResource l_app_name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Grid.Row="0"></Label>
+                    <Image Source="recycle_logo.png" Grid.Column="0" Grid.Row="0"></Image>
                 </Grid>
             </Frame>
             <Label Margin="40,30,0,0" Text="Меню" Style="{StaticResource l_header}"></Label>
