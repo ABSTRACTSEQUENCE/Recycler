@@ -21,5 +21,20 @@ namespace Recycler
 				Content.Children.Add(bt);
 			}
 		}
-	}
+
+		private async void bt_back_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PopAsync();
+		}
+
+		private async void bt_bottom_home_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PopToRootAsync();
+        }
+
+		private async void bt_bottom_map_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new Map());
+        }
+    }
 }

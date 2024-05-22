@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat;
 
 namespace Recycler
 {
@@ -30,5 +31,14 @@ namespace Recycler
 			await Navigation.PushAsync(new Codes());
 		}
 
+		private void bt_bottom_home_Clicked(object sender, EventArgs e)
+		{
+
+        }
+
+		private async void bt_bottom_map_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new Map());
+        }
     }
 }

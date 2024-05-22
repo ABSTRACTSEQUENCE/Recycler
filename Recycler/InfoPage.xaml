@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Recycler.InfoPage"
-             xmlns:local="clr-namespace:Recycler">
+             xmlns:local="clr-namespace:Recycler"
+             NavigationPage.HasNavigationBar="False"
+             Style="{StaticResource bg}">
     <ContentPage.Content>
         <StackLayout>
             <Frame Style="{StaticResource head}">
@@ -20,10 +22,21 @@
                     <Label Grid.Column="1" Style="{StaticResource Key=l_app_name}"></Label>
                 </Grid>
             </Frame>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ImageButton Style="{StaticResource bt_back}" x:Name="bt_back" Grid.Column="0" Clicked="bt_back_Clicked" Source="bt_back.png"></ImageButton>
+            </Grid>
             <Label Style="{StaticResource l_header}" x:Name="MainHeader" Text="Текст"></Label>
             <ScrollView>
                 <StackLayout Padding="0,0,40,0" x:Name="Articles"></StackLayout>
             </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                <ImageButton HorizontalOptions="Start" Style="{StaticResource bt_bottom}" x:Name="bt_bottom_home" Clicked="bt_bottom_home_Clicked" Source="bt_bottom_home"></ImageButton>
+                <ImageButton HorizontalOptions="End" Style="{StaticResource bt_bottom}" x:Name="bt_bottom_map" Clicked="bt_bottom_map_Clicked" Source="bt_bottom_map"></ImageButton>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

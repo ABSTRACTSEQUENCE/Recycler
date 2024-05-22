@@ -45,6 +45,7 @@
                 <Setter Property="FontSize" Value="15"></Setter>
                 <Setter Property="FontAttributes" Value="Bold"></Setter>
                 <Setter Property="Margin" Value="0,15,0,0"></Setter>
+                <Setter Property="WidthRequest" Value="200"></Setter>
             </Style>
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="20"></Setter>
@@ -78,6 +79,17 @@
             <Style x:Key="bt_selection" TargetType="Button">
                 <Setter Property="CornerRadius" Value="15"></Setter>
                 <Setter Property="HeightRequest" Value="66"></Setter>
+            </Style>
+            <Style TargetType="Button" x:Key="bt_back">
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+            </Style>
+            <Style TargetType="Button" x:Key="bt_bottom">
+                <Setter Property="WidthRequest" Value="180"></Setter>
+                <Setter Property="BackgroundColor" Value="#F6FDF3"></Setter>
+                <Setter Property="HeightRequest" Value="52"></Setter>
+            </Style>
+            <Style x:Key="bg" TargetType="ContentPage">
+                <Setter Property="BackgroundImageSource" Value="bg.png"></Setter>
             </Style>
         </ResourceDictionary>
 	</Application.Resources>

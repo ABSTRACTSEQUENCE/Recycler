@@ -9,7 +9,8 @@ namespace Recycler
 		public App()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new MainPage());
+			NavigationPage page = new NavigationPage(new MainPage());
+			MainPage = page;
 		}
 
 		protected override void OnStart()

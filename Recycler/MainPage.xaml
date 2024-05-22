@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local ="clr-namespace:Recycler"
-             x:Class="Recycler.MainPage">
+             x:Class="Recycler.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             Style="{StaticResource bg}">
     <StackLayout>
         <Frame Style="{StaticResource head}">
             <Grid>
@@ -31,7 +33,10 @@
         <Button Grid.Row="1" x:Name="bt_codes" Clicked="bt_codes_Clicked" Text="Коды переработки"></Button>
         <Button Grid.Row="2" x:Name="bt_map" Clicked="bt_map_Clicked" Text="Карта"></Button>
         </Grid>
-        
+        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+            <ImageButton HorizontalOptions="Start" Style="{StaticResource bt_bottom}" x:Name="bt_bottom_home" Clicked="bt_bottom_home_Clicked" Source="bt_bottom_home"></ImageButton>
+            <ImageButton HorizontalOptions="End" Style="{StaticResource bt_bottom}" x:Name="bt_bottom_map" Clicked="bt_bottom_map_Clicked" Source="bt_bottom_map"></ImageButton>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
 

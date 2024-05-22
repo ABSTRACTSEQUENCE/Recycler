@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms.Maps;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
 namespace Recycler
@@ -29,6 +26,7 @@ namespace Recycler
 			Garden,
 			Animal
 		};
+		MapMode CurrentMode = MapMode.None;
 		List<Pin> PlasticPins = new List<Pin>()
 		{
 			new Pin()
@@ -340,9 +338,10 @@ namespace Recycler
 			},
 	};
 		*/
-		public Map ()
+		public Map()
 		{
-			InitializeComponent ();
+			InitializeComponent();
+
 			//map = new Xamarin.Forms.Maps.Map(new MapSpan(new Position(58.010455, 56.229443), 58.010455, 56.229443));
 		}
 		public Map(MapMode mode)
@@ -350,8 +349,8 @@ namespace Recycler
 			InitializeComponent();
 			switch (mode)
 			{
-				case MapMode.Plastic:{ foreach (Pin pin in PlasticPins) map.Pins.Add(pin); break; }
-				case MapMode.Paper: { foreach(Pin pin in PaperPins) map.Pins.Add(pin); break; }
+				case MapMode.Plastic: { foreach (Pin pin in PlasticPins) map.Pins.Add(pin); break; }
+				case MapMode.Paper: { foreach (Pin pin in PaperPins) map.Pins.Add(pin); break; }
 				case MapMode.Food: { foreach (Pin pin in FoodPins) map.Pins.Add(pin); break; }
 				case MapMode.Chem: { foreach (Pin pin in ChemPins) map.Pins.Add(pin); break; }
 				case MapMode.Pharma: { foreach (Pin pin in PharmaPins) map.Pins.Add(pin); break; }
@@ -364,32 +363,112 @@ namespace Recycler
 			}
 		}
 
-		private void bt_garden_Clicked(object sender, EventArgs e)
+		void Toggle(MapMode mode)
 		{
-			if (!GardenMode)
+			while(map.Pins.Count != 0)
 			{
-				foreach (Pin pin in GardenPins) map.Pins.Add(pin);
-				GardenMode = true;
+				map.Pins.RemoveAt(0);
 			}
-			else
+			if (CurrentMode != mode)
+				switch (mode)
+				{
+					case MapMode.Paper:
+						{
+							foreach (Pin pin in PaperPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Paper;
+							break;
+						}
+					case MapMode.Food:
+						{
+							foreach (Pin pin in FoodPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Food;
+							break;
+						}
+					case MapMode.Plastic:
+						{
+							foreach (Pin pin in PlasticPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Plastic;
+							break;
+						}
+					case MapMode.Chem:
+						{
+							foreach (Pin pin in ChemPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Chem;
+							break;
+						}
+					case MapMode.Pharma:
+						{
+							foreach (Pin pin in PharmaPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Pharma;
+							break;
+						}
+					case MapMode.Garden:
+						{
+							foreach (Pin pin in GardenPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Garden;
+							break;
+						}
+					case MapMode.Animal:
+						{
+							foreach (Pin pin in AnimalPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Animal;
+							break;
+						}
+					case MapMode.Battaries:
+						{
+							foreach (Pin pin in BattariesPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Battaries;
+							break;
+						}
+					case MapMode.Electro:
+						{
+							foreach (Pin pin in ElectroPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Electro;
+							break;
+						}
+					case MapMode.Glass:
+						{
+							foreach (Pin pin in GlassPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Glass;
+							break;
+						}
+					case MapMode.Metal:
+						{
+							foreach (Pin pin in MetalPins) map.Pins.Add(pin);
+							CurrentMode = MapMode.Metal;
+							break;
+						}
+				}
+			else CurrentMode = MapMode.None;
+		}
+		private void bt_Clicked(object sender, EventArgs e)
+		{
+			if (sender is Button)
 			{
-				GardenMode = false;
-				foreach (Pin pin in GardenPins) map.Pins.Remove(pin);
-			} 
+				Button bt = sender as Button;
+				if (bt == bt_animal) Toggle(MapMode.Animal);
+				else if (bt == bt_battaries) Toggle(MapMode.Battaries);
+				else if (bt == bt_chem) Toggle(MapMode.Chem);
+				else if (bt == bt_electro) Toggle(MapMode.Electro);
+				else if (bt == bt_garden) Toggle(MapMode.Garden);
+				else if (bt == bt_glass) Toggle(MapMode.Glass);
+				else if (bt == bt_metal) Toggle(MapMode.Metal);
+				else if (bt == bt_organic) Toggle(MapMode.Food);
+				else if (bt == bt_paper) Toggle(MapMode.Paper);
+				else if (bt == bt_pharma) Toggle(MapMode.Pharma);
+				else if (bt == bt_plastic) Toggle(MapMode.Plastic);
+
+			}
 		}
 
-		private void bt_organic_Clicked(object sender, EventArgs e)
+		private async void bt_bottom_home_Clicked(object sender, EventArgs e)
 		{
-			if (!FoodMode)
-			{
-				foreach (Pin pin in FoodPins) map.Pins.Add(pin);
-				FoodMode = true;
-			}
-			else
-			{
-				foreach (Pin pin in FoodPins) map.Pins.Remove(pin);
-				FoodMode = false;
-			}
-		}
-	}
+			await Navigation.PopToRootAsync();
+        }
+
+		private void bt_bottom_map_Clicked(object sender, EventArgs e)
+		{
+
+        }
+    }
 }

@@ -2,29 +2,47 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Recycler.WasteTypes"
-             xmlns:local="clr-namespace:Recycler">
+             xmlns:local="clr-namespace:Recycler"
+             NavigationPage.HasNavigationBar="False"
+             Style="{StaticResource bg}">
     <ContentPage.Content>
         <StackLayout>
-            <Frame Style="{StaticResource head}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"></RowDefinition>
-                    </Grid.RowDefinitions>
+        <ScrollView>
+            <StackLayout>
+                <Frame Style="{StaticResource head}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                        </Grid.RowDefinitions>
 
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="64"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="64"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Style="{StaticResource l_app_name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Grid.Row="0"></Label>
+                        <Image Source="recycle_logo.png" Grid.Column="0" Grid.Row="0"></Image>
+                    </Grid>
+                </Frame>
+                <Grid MinimumHeightRequest="100" Margin="20"
+                  >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="64"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="64"></ColumnDefinition>
+                        <ColumnDefinition Width="45"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    
-                    <Label Style="{StaticResource l_app_name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Grid.Row="0"></Label>
-                    <Image Source="recycle_logo.png" Grid.Column="0" Grid.Row="0"></Image>
+                    <ImageButton Style="{StaticResource bt_back}" x:Name="bt_back" Grid.Column="0" Clicked="bt_back_Clicked" Source="bt_back.png"></ImageButton>
                 </Grid>
-            </Frame>
-            <Label Margin="40,30,0,0" Text="Меню" Style="{StaticResource l_header}"></Label>
-            <Button x:Name="bt_recyclable" Clicked="bt_recyclable_Clicked" Text="Перерабатываемые отходы" ></Button>
-            <Button x:Name="bt_hazardous" Clicked="bt_hazardous_Clicked" Text="Опасные отходы"></Button>
-            <Button x:Name="bt_organic" Clicked="bt_organic_Clicked" Text="Органические отходы"></Button>
+                <Label Margin="40,30,0,0" Text="Меню" Style="{StaticResource l_header}"></Label>
+                <Button x:Name="bt_recyclable" Clicked="bt_recyclable_Clicked" Text="Перерабатываемые отходы" ></Button>
+                <Button x:Name="bt_hazardous" Clicked="bt_hazardous_Clicked" Text="Опасные отходы"></Button>
+                <Button x:Name="bt_organic" Clicked="bt_organic_Clicked" Text="Органические отходы"></Button>
+            </StackLayout>
+        </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                <ImageButton HorizontalOptions="Start" Style="{StaticResource bt_bottom}" x:Name="bt_bottom_home" Clicked="bt_bottom_home_Clicked" Source="bt_bottom_home"></ImageButton>
+                <ImageButton HorizontalOptions="End" Style="{StaticResource bt_bottom}" x:Name="bt_bottom_map" Clicked="bt_bottom_map_Clicked" Source="bt_bottom_map"></ImageButton>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
