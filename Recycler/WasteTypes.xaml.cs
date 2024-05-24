@@ -1,5 +1,7 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace Recycler
@@ -39,6 +41,11 @@ namespace Recycler
 		private async void bt_bottom_home_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PopToRootAsync();
+		}
+
+		private async void bt_user_guide_Clicked(object sender, EventArgs e)
+		{
+			await Launcher.OpenAsync(new OpenFileRequest() { File = new ReadOnlyFile(App.Path) });
 		}
 	}
 }

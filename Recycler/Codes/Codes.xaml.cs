@@ -51,6 +51,10 @@ namespace Recycler
 		{
 			await Navigation.PushAsync(new Map());
         }
-    }
 
+		private async void bt_back_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PopAsync();
+		}
+	}
 }

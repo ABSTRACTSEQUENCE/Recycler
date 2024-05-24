@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 namespace Recycler
@@ -6,11 +7,13 @@ namespace Recycler
 	public partial class App : Application
 	{
 		public const string AppName = "Название приложения";
-		public App()
+		public static string Path;
+		public App(string path)
 		{
 			InitializeComponent();
 			NavigationPage page = new NavigationPage(new MainPage());
 			MainPage = page;
+			Path= path;
 		}
 
 		protected override void OnStart()

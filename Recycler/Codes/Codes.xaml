@@ -2,13 +2,14 @@
 <ContentPage Style="{StaticResource bg}" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Recycler.Codes"
-             xmlns:local="clr-namespace:Recycler">
+             xmlns:local="clr-namespace:Recycler"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout >
-            <ScrollView>
-            <StackLayout Orientation="Vertical">
 
-                <StackLayout.Resources>
+            <ScrollView>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout.Resources>
                     <ResourceDictionary>
                         <Style TargetType="StackLayout">
                             <Setter Property="HorizontalOptions" Value="Center"></Setter>
@@ -32,7 +33,14 @@
                         <Label Style="{StaticResource l_app_name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1"></Label>
                     </Grid>
                 </Frame>
-                <Label HorizontalTextAlignment="Center" Margin="0,30,0,0" Text="Коды переработки"></Label>
+                    <Grid MinimumHeightRequest="100" Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton Style="{StaticResource bt_back}" x:Name="bt_back" Grid.Column="0" Clicked="bt_back_Clicked" Source="bt_back.png"></ImageButton>
+                    </Grid>
+                    <Label HorizontalTextAlignment="Center" Margin="0,30,0,0" Text="Коды переработки"></Label>
                 
                 <StackLayout>
                     <ImageButton x:Name="bt_code_01" Clicked="bt_code_Clicked" HeightRequest="113" Source="code_1.png"></ImageButton>

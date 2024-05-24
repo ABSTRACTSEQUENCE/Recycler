@@ -10,23 +10,24 @@
         <ScrollView>
             <StackLayout>
                 <Frame Style="{StaticResource head}">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30"></RowDefinition>
-                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="64"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="64"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="64"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="64"></ColumnDefinition>
 
-                        <Label Style="{StaticResource l_app_name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Grid.Row="0"></Label>
-                        <Image Source="recycle_logo.png" Grid.Column="0" Grid.Row="0"></Image>
-                    </Grid>
-                </Frame>
-                <Grid MinimumHeightRequest="100" Margin="20"
-                  >
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource l_app_name}" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Grid.Row="0"></Label>
+                            <Image Source="recycle_logo.png" Grid.Column="0" Grid.Row="0"></Image>
+                            <ImageButton Source = "link" BackgroundColor="Transparent" Clicked="bt_user_guide_Clicked" x:Name="bt_user_guide" Grid.Column="3" Grid.Row="0"></ImageButton>
+                        </Grid>
+                    </Frame>
+                <Grid MinimumHeightRequest="100" Margin="20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="45"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>

@@ -10,7 +10,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="64"></RowDefinition>
                 <RowDefinition Height="61"></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="52"></RowDefinition>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -59,7 +60,7 @@
                     <Button x:Name="bt_pharma" Clicked="bt_Clicked" Text="Фармацевтические" Style="{StaticResource bt_map_top}"></Button>
                 </StackLayout>
             </ScrollView>
-            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Grid.Row="2">
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Grid.Row="3">
                 <ImageButton HorizontalOptions="Start" Style="{StaticResource bt_bottom}" x:Name="bt_bottom_home" Clicked="bt_bottom_home_Clicked" Source="bt_bottom_home"></ImageButton>
                 <ImageButton HorizontalOptions="End" Style="{StaticResource bt_bottom}" x:Name="bt_bottom_map" Clicked="bt_bottom_map_Clicked" Source="bt_bottom_map"></ImageButton>
             </StackLayout>
