@@ -33,7 +33,7 @@
             </Style>
             <Style TargetType="Button">
                 <Setter Property="Background" Value="{StaticResource bruh}"></Setter>
-                <Setter Property="HeightRequest" Value="200"></Setter>
+                <Setter Property="HeightRequest" Value="167"></Setter>
                 <Setter Property="Margin" Value="0,20,0,0"></Setter>
             </Style>
             <Style x:Key="bt_code_selected" TargetType="Button">
