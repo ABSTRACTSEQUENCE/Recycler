@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
-
+using Xamarin.Essentials;
 namespace Recycler
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Map : ContentPage
 	{
-		bool FoodMode = false;
-		bool GardenMode = false;
 		public enum MapMode
 		{
 			None,
@@ -466,9 +464,14 @@ namespace Recycler
 			await Navigation.PopToRootAsync();
         }
 
-		private void bt_bottom_map_Clicked(object sender, EventArgs e)
+		private async void bt_back_Clicked(object sender, EventArgs e)
 		{
+			await Navigation.PopAsync();
+		}
+		private async void bt_user_guide_Clicked(object sender, EventArgs e)
+		{
+			await Launcher.OpenAsync(new OpenFileRequest() { File = new ReadOnlyFile(App.Path) });
+		}
 
-        }
-    }
+	}
 }

@@ -23,17 +23,16 @@
 
                             </Grid.ColumnDefinitions>
                             <Label Style="{StaticResource l_app_name}" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Grid.Row="0"></Label>
-                            <Image Source="recycle_logo.png" Grid.Column="0" Grid.Row="0"></Image>
+                            <ImageButton Clicked="bt_back_Clicked" BackgroundColor="Transparent" Source="bt_back" Grid.Column="0" Grid.Row="0"></ImageButton>
                             <ImageButton Source = "link" BackgroundColor="Transparent" Clicked="bt_user_guide_Clicked" x:Name="bt_user_guide" Grid.Column="3" Grid.Row="0"></ImageButton>
                         </Grid>
                     </Frame>
-                <Grid MinimumHeightRequest="100" Margin="20">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="45"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <ImageButton Style="{StaticResource bt_back}" x:Name="bt_back" Grid.Column="0" Clicked="bt_back_Clicked" Source="bt_back.png"></ImageButton>
-                </Grid>
+                <Grid MinimumHeightRequest="100">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
                 <Label Margin="40,30,0,0" Text="Меню" Style="{StaticResource l_header}"></Label>
                 <Button x:Name="bt_recyclable" Clicked="bt_recyclable_Clicked" Text="Перерабатываемые отходы" ></Button>
                 <Button x:Name="bt_hazardous" Clicked="bt_hazardous_Clicked" Text="Опасные отходы"></Button>

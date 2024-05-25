@@ -18,28 +18,24 @@
                     </ResourceDictionary>
                 </StackLayout.Resources>
                 <Frame Style="{StaticResource head}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="64"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="64"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
 
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"></RowDefinition>
-                        </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="64"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="64"></ColumnDefinition>
 
-                        <Image Source="recycle_logo.png" Grid.Column="0"></Image>
-                        <Label Style="{StaticResource l_app_name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1"></Label>
-                    </Grid>
-                </Frame>
-                    <Grid MinimumHeightRequest="100" Margin="20">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="45"></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <ImageButton Style="{StaticResource bt_back}" x:Name="bt_back" Grid.Column="0" Clicked="bt_back_Clicked" Source="bt_back.png"></ImageButton>
-                    </Grid>
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{StaticResource l_app_name}" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Grid.Row="0"></Label>
+                            <ImageButton Clicked="bt_back_Clicked" BackgroundColor="Transparent" Source="bt_back" Grid.Column="0" Grid.Row="0"></ImageButton>
+                            <ImageButton Source = "link" BackgroundColor="Transparent" Clicked="bt_user_guide_Clicked" x:Name="bt_user_guide" Grid.Column="3" Grid.Row="0"></ImageButton>
+                        </Grid>
+                    </Frame>
+                   
                     <Label HorizontalTextAlignment="Center" Margin="0,30,0,0" Text="Коды переработки"></Label>
                 
                 <StackLayout>

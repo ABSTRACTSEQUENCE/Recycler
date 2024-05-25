@@ -15,6 +15,7 @@ namespace Recycler
 		public MainPage()
 		{
 			InitializeComponent();
+			Xamarin.Forms.NavigationPage.SetTitleIconImageSource(this, ImageSource.FromResource("recycle_logo.png"));
 		}
 
 		private async void bt_wasteType_Clicked(object sender, EventArgs e)

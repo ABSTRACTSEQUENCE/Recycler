@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local ="clr-namespace:Recycler"
              x:Class="Recycler.MainPage"
-             NavigationPage.HasNavigationBar="False"
-             Style="{StaticResource bg}">
+             Style="{StaticResource bg}"
+             NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Frame Style="{StaticResource head}">
             <Grid>
@@ -15,13 +15,12 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="64"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="64"></ColumnDefinition>
-
                 </Grid.ColumnDefinitions>
-                <Label Style="{StaticResource l_app_name}" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{x:Static local:App.AppName}" Grid.Column="1" Grid.Row="0"></Label>
-                <Image Source="recycle_logo.png" Grid.Column="0" Grid.Row="0"></Image>
-                <ImageButton Source = "link" BackgroundColor="Transparent" Clicked="bt_user_guide_Clicked" x:Name="bt_user_guide" Grid.Column="3" Grid.Row="0"></ImageButton>
+                
+                <Image Source="recycle_logo" Grid.Column="0"></Image>
+                <Label Text="{Static local:App.AppName}" Grid.Column="1" Style="{StaticResource l_app_name}"></Label>
+                <ImageButton Source="link" BackgroundColor="Transparent" Grid.Column="2" Clicked="bt_user_guide_Clicked"></ImageButton>
             </Grid>
         </Frame>
         <Grid>

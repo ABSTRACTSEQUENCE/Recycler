@@ -5,6 +5,7 @@
              xmlns:local ="clr-namespace:Recycler">
 	<Application.Resources>
 		<ResourceDictionary>
+            
             <LinearGradientBrush x:Key="bruh" StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Offset="0.1" Color="#A8DF8E"/>
                 <GradientStop Offset="0.5" Color="#DBEED2"/>
